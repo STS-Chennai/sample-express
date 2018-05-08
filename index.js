@@ -54,6 +54,11 @@ class Server {
     this.app.use(require('./routes'));
 
     this.app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+
+    this.app.use('/case-list', function(req, res){
+      res.send({"status":1, "message":"end point created successfully"})
+    });
+
   }
 
   start() {
