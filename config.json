@@ -1,0 +1,102 @@
+{
+  "OTPMESSAGE": {
+    "signin": "OTP for Signin",
+    "signup": "OTP for Signup"
+  },
+  "CITIES": {
+    "chennai": {
+      "name": "chennai"
+    }
+  },
+  "VEHICLE_TYPE": {
+    "hatchback": {
+      "name": "Hatchback",
+      "capacity": 3
+    },
+    "sedan": {
+      "name": "Sedan",
+      "capacity": 5
+    },
+    "suv": {
+      "name": "SUV",
+      "capacity": 7
+    },
+    "muv": {
+      "name": "MUV",
+      "capacity": 9
+    }
+  },
+  "SETTINGS": {
+    "surge_price": [
+      1.2,
+      1.4,
+      1.6,
+      1.8,
+      2,
+      2.2,
+      2.4,
+      2.6,
+      2.8,
+      3,
+      3.2,
+      4
+    ]
+  },
+  "PROMOCODE_CONFIG": {
+    "promocode_type": {
+      "PERCENTAGE": "Percentage (%)",
+      "FLAT": "Flat"
+    },
+    "status": {
+      "ACTIVE": "Active",
+      "SCHEDULED": "Scheduled",
+      "INACTIVE": "Inactive"
+    }
+  },
+  "COUNTRIES": {
+    "india": {
+      "name": "India",
+      "code": "in",
+      "currency":"INR",
+      "symbol":"₹"
+    },
+    "mauritius": {
+      "name": "Mauritius",
+      "code": "mu",
+      "currency":"MUR",
+      "symbol":"Rs"
+    }
+  },
+  "LANGUAGES": {
+    "english":{
+      "name":"English(US)",
+      "code":"en_us"
+    },
+    "french":{
+      "name":"French",
+      "code":"fr"
+    }
+  },
+  "DOCUMENTS":{
+    "license_front":{
+      "title":"License Front",
+      "name":"document_license_front"
+    },
+    "license_back":{
+      "title":"License Back",
+      "name":"document_license_back"
+    },
+    "rc_book":{
+      "title":"RC Book",
+      "name":"document_rc_book"
+    },
+    "insurance":{
+      "title":"Insurance",
+      "name":"document_insurance"
+    },
+    "others":{
+      "title":"Others",
+      "name":"document_others"
+    }
+  }
+}

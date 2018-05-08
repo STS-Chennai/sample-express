@@ -1,0 +1,26 @@
+#Server display name.
+APP_NAME=Data Valut
+
+#Configure Parse API route.
+PARSE_MOUNT=/parse
+
+#A unique identifier for your app.
+APP_ID=fudafLCEcYHpKu3gQGwGWWXho2qTYdWc00b67485
+
+#A key that overrides all permissions. Keep this secret.
+MASTER_KEY=3e0d0WDahwaIEvNqWOZm4IXhIVC8GKhCukW992e9
+
+#URL to connect to your Heroku instance (update with your app's name + PARSE_MOUNT)
+SERVER_URL=http://localhost:1567/parse
+
+DASHBOARD_HOST=localhost
+DASHBOARD_PORT=4569
+
+PORT=1567
+#mongodb://shenll:shenll@ds133558.mlab.com:33558/shenlltaxi
+#mongodb://localhost:27017/neopharma-dev
+MONGODB_URI=mongodb://localhost:27017/neopharma-test
+
+VERBOSE=1
+DEBUG=apn
+VERBOSE_PARSE_SERVER_PUSH_ADAPTER=1
