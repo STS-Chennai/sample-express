@@ -5,9 +5,6 @@ module.exports = {
     'es6': true
   },
   'extends': 'eslint:recommended',
-  'parserOptions': {
-    'sourceType': 'module'
-  },
   'plugins': ['node'],
   'rules': {
     'indent': [2, 4],
