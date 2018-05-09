@@ -37,7 +37,7 @@ node_modules
 .gitattributes
 .isomorphic-loader-config.json
 .travis.yml
-.package-lock.json
+package-lock.json
 
 newrider.p12
 node_modules
