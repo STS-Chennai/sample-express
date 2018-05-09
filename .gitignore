@@ -34,10 +34,10 @@ node_modules
 .ebextensions
 .yo-rc.json
 .editorconfig
-.eslintrc.js
 .gitattributes
 .isomorphic-loader-config.json
 .travis.yml
+.package-lock.json
 
 newrider.p12
 node_modules
