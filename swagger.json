@@ -38,7 +38,7 @@
         "tags": [
           "Session Token"
         ],
-        "description": "Create new session token to access resources in system",
+        "description": "Create new session token to access resources in our system",
         "consumes": [
           "application/x-www-form-urlencoded"
         ],
@@ -90,7 +90,6 @@
           {
             "name": "user",
             "in": "body",
-            "description": "User that we want to create",
             "schema": {
               "$ref": "#/definitions/User"
             }
@@ -99,7 +98,6 @@
             "name": "X-Parse-Application-Id",
             "value":"fudafLCEcYHpKu3gQGwGWWXho2qTYdWc00b67485",
             "in": "header",
-            "description": "User that we want to create",
             "schema": {
               "type": "string"
             },
@@ -110,12 +108,6 @@
           "application/json"
         ],
         "responses": {
-          "200": {
-            "description": "New user is created",
-            "schema": {
-              "$ref": "#/definitions/User"
-            }
-          }
         }
       },
       "get": {
@@ -128,29 +120,10 @@
             "name": "X-Parse-Application-Id",
             "value":"fudafLCEcYHpKu3gQGwGWWXho2qTYdWc00b67485",
             "in": "header",
-            "description": "Get list of users in our system",
             "schema": {
               "type": "string"
             },
             "required": true
-          },
-          {
-            "in": "query",
-            "name": "where",
-            "content": {
-              "type":"application/json",
-              "schema": {
-                "type": "object",
-                "properties": {
-                  "type": {
-                    "type": "string"
-                  },
-                  "color": {
-                    "type": "string"
-                  }
-                }
-              }
-            }
           }
         ],
         "produces": [
@@ -167,14 +140,12 @@
           "name": "userId",
           "in": "path",
           "required": true,
-          "description": "ID of user that we want to find",
           "type": "string"
         },
         {
           "name": "X-Parse-Application-Id",
           "value":"fudafLCEcYHpKu3gQGwGWWXho2qTYdWc00b67485",
           "in": "header",
-          "description": "Application ID of TamperLOK System",
           "schema": {
             "type": "string"
           },
@@ -198,14 +169,6 @@
         "responses": {
         }
       },
-      "delete": {
-        "summary": "Delete user with given ID",
-        "tags": [
-          "Users"
-        ],
-        "responses": {
-        }
-      },
       "put": {
         "summary": "Update user with given ID",
         "tags": [
@@ -223,6 +186,14 @@
         ],
         "responses": {
         }
+      },
+      "delete": {
+        "summary": "Delete user with given ID",
+        "tags": [
+          "Users"
+        ],
+        "responses": {
+        }
       }
     },
 
@@ -232,7 +203,6 @@
           "name": "X-Parse-Application-Id",
           "value":"fudafLCEcYHpKu3gQGwGWWXho2qTYdWc00b67485",
           "in": "header",
-          "description": "Get list of users in our system",
           "schema": {
             "type": "string"
           },
@@ -243,12 +213,11 @@
         "tags": [
           "Kits"
         ],
-        "description": "Create new user in system",
+        "description": "Create new Kit in system",
         "parameters": [
           {
             "name": "user",
             "in": "body",
-            "description": "User that we want to create",
             "schema": {
               "$ref": "#/definitions/Kit"
             }
@@ -264,13 +233,12 @@
         "tags": [
           "Kits"
         ],
-        "summary": "Get all users in system",
+        "summary": "Get all Kits in system",
         "parameters": [
           {
             "name": "X-Parse-Application-Id",
             "value":"fudafLCEcYHpKu3gQGwGWWXho2qTYdWc00b67485",
             "in": "header",
-            "description": "Get list of users in our system",
             "schema": {
               "type": "string"
             },
@@ -291,7 +259,6 @@
           "name": "X-Parse-Application-Id",
           "value":"fudafLCEcYHpKu3gQGwGWWXho2qTYdWc00b67485",
           "in": "header",
-          "description": "Get list of users in our system",
           "schema": {
             "type": "string"
           },
@@ -302,12 +269,11 @@
         "tags": [
           "FieldTest"
         ],
-        "description": "Create new user in system",
+        "description": "Create new FieldTest in system",
         "parameters": [
           {
             "name": "fieldtest",
             "in": "body",
-            "description": "Field Test to create",
             "schema": {
               "$ref": "#/definitions/FieldTest"
             }
@@ -321,15 +287,14 @@
       },
       "get": {
         "tags": [
-          "Kits"
+          "FieldTest"
         ],
-        "summary": "Get all users in system",
+        "summary": "Get all FieldTest in system",
         "parameters": [
           {
             "name": "X-Parse-Application-Id",
             "value":"fudafLCEcYHpKu3gQGwGWWXho2qTYdWc00b67485",
             "in": "header",
-            "description": "Get list of users in our system",
             "schema": {
               "type": "string"
             },
@@ -350,7 +315,6 @@
           "name": "X-Parse-Application-Id",
           "value":"fudafLCEcYHpKu3gQGwGWWXho2qTYdWc00b67485",
           "in": "header",
-          "description": "Application ID of TamperLOK System",
           "schema": {
             "type": "string"
           },
@@ -360,7 +324,6 @@
           "name": "fieldTestId",
           "in": "path",
           "required": true,
-          "description": "ID of Field Test that we want to find",
           "type": "string"
         }
       ],
