@@ -283,6 +283,121 @@
         "responses": {
         }
       }
+    },
+
+    "/classes/FieldTest": {
+      "parameters": [
+        {
+          "name": "X-Parse-Application-Id",
+          "value":"fudafLCEcYHpKu3gQGwGWWXho2qTYdWc00b67485",
+          "in": "header",
+          "description": "Get list of users in our system",
+          "schema": {
+            "type": "string"
+          },
+          "required": true
+        }
+      ],
+      "post": {
+        "tags": [
+          "FieldTest"
+        ],
+        "description": "Create new user in system",
+        "parameters": [
+          {
+            "name": "fieldtest",
+            "in": "body",
+            "description": "Field Test to create",
+            "schema": {
+              "$ref": "#/definitions/FieldTest"
+            }
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+        }
+      },
+      "get": {
+        "tags": [
+          "Kits"
+        ],
+        "summary": "Get all users in system",
+        "parameters": [
+          {
+            "name": "X-Parse-Application-Id",
+            "value":"fudafLCEcYHpKu3gQGwGWWXho2qTYdWc00b67485",
+            "in": "header",
+            "description": "Get list of users in our system",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+        }
+      }
+    },
+
+    "/classes/FieldTest/{fieldTestId}": {
+      "parameters": [
+        {
+          "name": "X-Parse-Application-Id",
+          "value":"fudafLCEcYHpKu3gQGwGWWXho2qTYdWc00b67485",
+          "in": "header",
+          "description": "Application ID of TamperLOK System",
+          "schema": {
+            "type": "string"
+          },
+          "required": true
+        },
+        {
+          "name": "fieldTestId",
+          "in": "path",
+          "required": true,
+          "description": "ID of Field Test that we want to find",
+          "type": "string"
+        }
+      ],
+      "get": {
+        "tags": [
+          "FieldTest"
+        ],
+        "summary": "Get FieldTest with given ID",
+        "responses": {
+        }
+      },
+      "put": {
+        "summary": "Update FieldTest with given ID",
+        "tags": [
+          "FieldTest"
+        ],
+        "parameters": [
+          {
+            "name": "user",
+            "in": "body",
+            "description": "User with new values of properties",
+            "schema": {
+              "$ref": "#/definitions/FieldTest"
+            }
+          }
+        ],
+        "responses": {
+        }
+      },
+      "delete": {
+        "summary": "Delete FieldTest with given ID",
+        "tags": [
+          "FieldTest"
+        ],
+        "responses": {
+        }
+      }
     }
 
   },
@@ -348,6 +463,73 @@
               "type":"string"
             }
           }
+        }
+      }
+    },
+    "FieldTest": {
+      "required": [
+        "officer",
+        "donor_id",
+        "name",
+        "dob",
+        "gender",
+        "email",
+        "mobile",
+        "address",
+        "donor_image",
+        "kit_id",
+        "kit_image",
+        "tested_kit",
+        "comments"
+      ],
+      "properties": {
+        "officer": {
+          "type": "object",
+          "properties": {
+            "id":{
+              "type":"string"
+            },
+            "name": {
+              "type":"string"
+            }
+          }
+        },
+        "donor_id": {
+          "type": "string",
+          "uniqueItems": true
+        },
+        "name": {
+          "type": "string"
+        },
+        "dob": {
+          "type": "string"
+        },
+        "gender": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        },
+        "mobile": {
+          "type": "string"
+        },
+        "address": {
+          "type": "string"
+        },
+        "donor_image": {
+          "type": "string"
+        },
+        "kit_id": {
+          "type": "string"
+        },
+        "kit_image": {
+          "type": "string"
+        },
+        "tested_kit": {
+          "type": "string"
+        },
+        "comments": {
+          "type": "string"
         }
       }
     }
