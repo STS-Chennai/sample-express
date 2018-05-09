@@ -1,11 +1,11 @@
-let express = require('express');
-let ParseServer = require('parse-server').ParseServer;
-let path = require('path');
-let env = require('node-env-file');
-let cookieParser = require('cookie-parser');
+let express = require("express");
+let ParseServer = require("parse-server").ParseServer;
+let path = require("path");
+let env = require("node-env-file");
+let cookieParser = require("cookie-parser");
 
-const swaggerUi = require('swagger-ui-express');
-const swaggerDocument = require('./swagger.json');
+const swaggerUi = require("swagger-ui-express");
+const swaggerDocument = require("./swagger.json");
 
 class Server {
   constructor() {
@@ -13,7 +13,7 @@ class Server {
     Server.setUpEnv();
     this.parseServer = new ParseServer({
       databaseURI: process.env.MONGODB_URI,
-      cloud: process.env.CLOUD_CODE_MAIN || __dirname + '/cloud/main.js',
+      cloud: process.env.CLOUD_CODE_MAIN || __dirname + "/cloud/main.js",
       appId: process.env.APP_ID,
       masterKey: process.env.MASTER_KEY,
       serverURL: process.env.SERVER_URL,
@@ -28,32 +28,32 @@ class Server {
 
   setUp() {
 
-    this.app.set('views', __dirname + '/views'); // general config
-    this.app.set('view engine', 'pug');
+    this.app.set("views", __dirname + "/views"); // general config
+    this.app.set("view engine", "pug");
 
     this.app.use(cookieParser());
 
     // Serve static assets from the /public folder
-    this.app.use('/public', express.static(path.join(__dirname, '/public')));
+    this.app.use("/public", express.static(path.join(__dirname, "/public")));
 
     // Serve the Parse API on the /parse URL prefix
     let mountPath = process.env.PARSE_MOUNT;
     this.app.use(mountPath, this.parseServer);
 
-    this.app.get('/', function (req, res) {
-      res.status(200).send('Server started successfully!');
+    this.app.get("/", function (req, res) {
+      res.status(200).send("Server started successfully!");
     });
 
-    this.app.use(require('./routes'));
+    this.app.use(require("./routes"));
 
-    this.app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+    this.app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocument));
   }
 
   start() {
     let port = process.env.PORT;
-    let httpServer = require('http').createServer(this.app);
+    let httpServer = require("http").createServer(this.app);
     httpServer.listen(port, function () {
-      console.log(process.env.APP_NAME + ' running on port ' + port + '.');
+      console.log(process.env.APP_NAME + " running on port " + port + ".");
     });
 
     // This will enable the Live Query real-time server
@@ -62,7 +62,7 @@ class Server {
 
   static setUpEnv() {
     if(process.env.APP_ENV === "live")
-      env(__dirname + '/.env');
+      env(__dirname + "/.env");
   }
 
   static setUpDashboard() {
