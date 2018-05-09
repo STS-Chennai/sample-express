@@ -224,7 +224,67 @@
         "responses": {
         }
       }
+    },
+
+    "/classes/Kits": {
+      "parameters": [
+        {
+          "name": "X-Parse-Application-Id",
+          "value":"fudafLCEcYHpKu3gQGwGWWXho2qTYdWc00b67485",
+          "in": "header",
+          "description": "Get list of users in our system",
+          "schema": {
+            "type": "string"
+          },
+          "required": true
+        }
+      ],
+      "post": {
+        "tags": [
+          "Kits"
+        ],
+        "description": "Create new user in system",
+        "parameters": [
+          {
+            "name": "user",
+            "in": "body",
+            "description": "User that we want to create",
+            "schema": {
+              "$ref": "#/definitions/Kit"
+            }
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+        }
+      },
+      "get": {
+        "tags": [
+          "Kits"
+        ],
+        "summary": "Get all users in system",
+        "parameters": [
+          {
+            "name": "X-Parse-Application-Id",
+            "value":"fudafLCEcYHpKu3gQGwGWWXho2qTYdWc00b67485",
+            "in": "header",
+            "description": "Get list of users in our system",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+        }
+      }
     }
+
   },
   "definitions": {
     "User": {
@@ -261,6 +321,35 @@
     "Users": {
       "type": "array",
       "$ref": "#/definitions/User"
+    },
+    "Kit": {
+      "required": [
+        "kit_id",
+        "supervisor"
+      ],
+      "properties": {
+        "kit_id": {
+          "type": "string",
+          "uniqueItems": true
+        },
+        "kit_count": {
+          "type": "string"
+        },
+        "received_date": {
+          "type": "string"
+        },
+        "supervisor": {
+          "type": "object",
+          "properties": {
+            "id":{
+              "type":"string"
+            },
+            "name": {
+              "type":"string"
+            }
+          }
+        }
+      }
     }
   }
 }
