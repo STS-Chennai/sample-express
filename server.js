@@ -7,6 +7,10 @@ let cookieParser = require("cookie-parser");
 const swaggerUi = require("swagger-ui-express");
 const swaggerDocument = require("./swagger.json");
 
+/* Log Entries */
+let Logger = require("r7insight_node");
+let log;
+
 class Server {
   constructor() {
     this.app = express();
@@ -46,7 +50,15 @@ class Server {
 
     this.app.use(require("./routes"));
 
-    this.app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+    this.app.use(
+      "/api-docs",
+      function(req, res, next){
+        log.info("This is a logging in swagger");
+        next();
+      },
+      swaggerUi.serve,
+      swaggerUi.setup(swaggerDocument)
+    );
   }
 
   start() {
@@ -63,6 +75,11 @@ class Server {
   static setUpEnv() {
     if(process.env.APP_ENV === "live")
       env(__dirname + "/.env");
+
+    log = new Logger({
+      token: process.env.LE_TOKEN,
+      region: process.env.LE_REGION
+    });
   }
 
   static setUpDashboard() {
