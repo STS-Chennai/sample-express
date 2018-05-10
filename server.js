@@ -9,10 +9,7 @@ const swaggerDocument = require("./swagger.json");
 
 /* Log Entries */
 let Logger = require("r7insight_node");
-let log = new Logger({
-  token: "b406b760-d3f5-427b-bf8d-db577976e7db",
-  region: "eu"
-});
+let log;
 
 class Server {
   constructor() {
@@ -57,7 +54,7 @@ class Server {
       "/api-docs",
       function(req, res, next){
         log.info("This is a logging in swagger");
-        next()
+        next();
       },
       swaggerUi.serve,
       swaggerUi.setup(swaggerDocument)
@@ -78,6 +75,11 @@ class Server {
   static setUpEnv() {
     if(process.env.APP_ENV === "live")
       env(__dirname + "/.env");
+
+    log = new Logger({
+      token: process.env.LE_TOKEN,
+      region: process.env.LE_REGION
+    });
   }
 
   static setUpDashboard() {
