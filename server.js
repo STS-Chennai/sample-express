@@ -45,7 +45,7 @@ class Server {
     this.app.use(mountPath, this.parseServer);
 
     this.app.get("/", function (req, res) {
-      res.status(200).send("Server started successfully!");
+      res.status(200).send("Server started  !");
     });
 
     this.app.use(require("./routes"));
