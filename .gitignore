@@ -38,6 +38,7 @@ node_modules
 .isomorphic-loader-config.json
 .travis.yml
 package-lock.json
+test-results.xml
 
 newrider.p12
 node_modules
