@@ -22,10 +22,11 @@ jobs:
       - run: mkdir ~/junit
       - run:
           command: ./node_modules/.bin/mocha test --reporter mocha-junit-reporter --timeout 10000
-          environment:
-              MOCHA_FILE: ~/junit/test-results.xml
           when: always
       - store_test_results:
           path: ~/junit
+      -run:
+          command: ls
       - store_artifacts:
           path: ~/junit/test-results.xml
+          destination: artifact-file.xml
