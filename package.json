@@ -26,17 +26,17 @@
     "parse-server": "^2.7.4",
     "parse-server-push-adapter": "^2.0.2",
     "pug": "^2.0.0-rc.4",
-    "r7insight_node": "^1.8.1",
     "swagger-ui-express": "^3.0.8"
   },
   "devDependencies": {
     "chai": "^3.5.0",
     "chai-http": "^2.0.1",
-    "mocha": "^2.4.5"
+    "mocha": "^2.4.5",
+    "mocha-junit-reporter": "^1.17.0"
   },
   "scripts": {
     "start": "node index.js",
-    "test": "mocha --timeout 10000"
+    "test": "mocha test --reporter mocha-junit-reporter --timeout 10000"
   },
   "engines": {
     "node": ">=4.3"
