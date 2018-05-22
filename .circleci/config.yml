@@ -25,8 +25,6 @@ jobs:
           when: always
       - store_test_results:
           path: ~/junit
-      -run:
-          command: ls
       - store_artifacts:
           path: ~/junit/test-results.xml
           destination: artifact-file.xml
